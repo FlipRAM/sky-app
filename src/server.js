@@ -1,9 +1,5 @@
-const express = require('express');
-const router = require('./routes/index');
+const app = require('./app');
 
-const app = express();
-app.use(express.json());
-
-app.use(router);
-
-module.exports = app;
+app.listen(3001, () => {
+  console.log('Escutando na porta 3001');
+});

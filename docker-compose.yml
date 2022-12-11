@@ -1,33 +1,21 @@
-version: "3"
-
+version: '3'
 services:
   node:
-    image: node:16.14
     container_name: sky_app
-    build: ./ 
-    tty: true
-    stdin_open: true
-    command: bash
     restart: always
-    working_dir: /app
-    volumes:
-      - ./:/app
+    build: .
     depends_on:
-      - mongodb
+      - mongo
     ports:
       - 3001:3001
-    environment:
-      - MONGO_URI=mongodb://mongodb:27017/Sky
-
-  mongodb:
-    image: mongo:5.0.7
-    container_name: sky_db
     volumes:
-      - ./:/app
-    restart: always
+      - ./:/code
+  mongo:
+    container_name: sky_db
+    image: mongo
     ports:
       - 27017:27017
-
-networks:
-  default:
-    name: sky_net
+    volumes:
+      - mongodb:/data/db
+volumes:
+ mongodb:
