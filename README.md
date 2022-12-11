@@ -10,6 +10,7 @@
   
   Para rodar o projeto certifique que a porta 3001 está liberada e o mongo está configurado na porta 27017.<br />
   Vá para para a branch master com o comando git checkout master e dê um pull.<br />
+  Crie um arquivo .env de acordo com o .env.template para escolher variáveis de ambiente.<br />
   Após o pull dê um npm install para instalar as dependências e após isso apenas rode o comando npm run dev para rodar o servidor no modo watch ou npm run start para uma maneira estática.
   
 
