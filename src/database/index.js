@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://mongodb:27017/Sky', { useMongoClient: true });
+mongoose.connect('mongodb://localhost/Sky');
 mongoose.Promise = global.Promise;
 
 module.exports = mongoose;
